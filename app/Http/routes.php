@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/task', function(){
+    echo 'all';
+})->name('task.index');
+
+Route::get('/task/create', function(){
+    echo 'add form';
+});
+
+Route::post('/task', function(){
+    echo 'store';
+});
+
+Route::delete('/task/{id}', function(){
+    echo 'delete';
+});
