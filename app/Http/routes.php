@@ -16,17 +16,17 @@ Route::get('/', function () {
 });
 
 Route::get('/task', function(){
-    echo 'all';
+    return view();
 })->name('task.index');
 
 Route::get('/task/create', function(){
     echo 'add form';
-});
+})->name('task.create');
 
 Route::post('/task', function(){
     echo 'store';
-});
+})->name('task.store');
 
 Route::delete('/task/{id}', function(){
-    echo 'delete';
-});
+    echo 'destroy';
+})->name('task.destroy');
