@@ -39,7 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Task list</div>
-                <a href="<?= url('task')?>">Begin</a>
+                <a href="{{route('task.index')}}">Begin</a>
             </div>
         </div>
     </body>
