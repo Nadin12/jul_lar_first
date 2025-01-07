@@ -16,24 +16,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (count($tasks) > 0)
-                            @foreach ($tasks as $task)
-                                <tr>
-                                    <!-- Task Name -->
-                                    <td class="table-text">
-                                        <div>{{ $task->name }}</div>
-                                    </td>
-                                    <td>
-                                        <form action="{{route('task.destroy', $task->id)}}" method="post">
-                                            {{csrf_field()}}
-                                            {{method_field('DELETE')}}
-                                            <input type="submit" value="delete" class="btn btn-danger">
-                                        </form>
-                                        <a href="{{ route('task.edit', $task->id) }}" class="btn btn-warning">Edit</a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        @endif
+                    @if (count($tasks) > 0)
+                        @foreach ($tasks as $task)
+                            <tr>
+                                <td class="table-text">
+                                    <div>{{ $task->name }}</div>
+                                </td>
+                                <td>
+                                    <form action="{{ route('task.destroy', $task->id) }}" method="post" style="display:inline-block;">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <input type="submit" value="Delete" class="btn btn-danger">
+                                    </form>
+                                    <a href="{{ route('task.edit', $task->id) }}" class="btn btn-warning" style="display:inline-block;">Edit</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>
